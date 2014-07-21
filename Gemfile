@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.15'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'pg', group: :production
+gem 'mysql2', group: :development
 
 gem 'rails_admin'
 # Gems used only for assets and not required
@@ -19,6 +21,8 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'rails_12factor', group: :production
+
 gem 'oj'
 gem 'oj_mimic_json'
 
