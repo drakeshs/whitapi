@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  phone_number: 1
+  appointment_time: 2014-07-11 17:00:06
+  purpose_of_meeting: MyText
+  team_member: MyString
+
+two:
+  name: MyString
+  email: MyString
+  phone_number: 1
+  appointment_time: 2014-07-11 17:00:06
+  purpose_of_meeting: MyText
+  team_member: MyString

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  month: MyString
+  tax_date: 2014-07-09
+  title: MyString
+  obligation: MyText
+
+two:
+  month: MyString
+  tax_date: 2014-07-09
+  title: MyString
+  obligation: MyText

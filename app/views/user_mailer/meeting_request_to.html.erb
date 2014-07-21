@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h4>Hi <%= @accountant_email.name %><b>,</h4>
+		<h2><%= @invitation.name %> has scheduled an interview with you regarding <b>"<%= @invitation.purpose_of_meeting %>"</b>
+		<h2>The following are the details of the scheduled meeting.</h2>
+		</br>
+		 <h4> Appointment Time: <%= @appointment_time %> </h4>
+		 <p> Note: <b>Time zone is Australian Eastern Standard Time(Brisbane and Sydney)AEST.</p>
+	</body>
+	<footer>
+		<address>
+			Level 1,120 wood Street,Canegrowers Building,Mackay<br>
+			PO Box 3415,North Mackay,Qld,4740<br>
+			<a href="fax:+07.4953.5858">Fax: +07.4953.5858</a><br>
+			<a href="tel:07-4953-5858">07-4953-5858</a><br>
+			<a href= "mailto:wealth@whitsonwatt.com.au" >wealth@whitsonwatt.com.au</a>
+		</address>
+	</footer>
+</html>
