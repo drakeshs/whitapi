@@ -45,3 +45,5 @@ gem 'rmagick'
 # To use debugger
 # gem 'debugger'
 gem "devise"
+
+#heroku ps:scale web=1
