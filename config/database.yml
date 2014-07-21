@@ -41,6 +41,14 @@
 #   password:
 #   socket: /var/run/mysqld/mysqld.sock
 
+ development:
+  adapter: postgresql
+  encoding: unicode
+  database: whitsonwatt_api_development
+  pool: 5
+  username: 
+  password:
+  
  production:
   adapter: postgresql
   encoding: unicode
