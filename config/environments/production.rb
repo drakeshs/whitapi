@@ -1,3 +1,4 @@
+HOSTNAME = 'http://afternoon-thicket-1670.herokuapp.com'
 WhitsonwattApi::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -21,6 +22,27 @@ WhitsonwattApi::Application.configure do
   config.assets.digest = true
 
   config.assets.initialize_on_precompile = false
+
+
+  # Don't care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = false
+  
+  # ActionMailer Config
+  config.action_mailer.default_url_options = { :host => HOSTNAME }
+  config.action_mailer.delivery_method = :smtp
+  # change to true to allow email to be sent during production
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "Whistonwatt.com",
+    authentication: "plain",
+    user_name: 'railstest39@gmail.com',
+    password: 'rails@123'
+  }
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
