@@ -7,7 +7,7 @@ class CreateMeetingRequests < ActiveRecord::Migration
       t.integer  :accountant_id
       t.datetime :appointment_time
       t.text     :purpose_of_meeting
-      t.boolean  :skype_interview, default: 0
+      t.boolean  :skype_interview, default: false
       t.timestamps
     end
   end
