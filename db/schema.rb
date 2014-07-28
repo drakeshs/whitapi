@@ -44,18 +44,6 @@ ActiveRecord::Schema.define(:version => 20140715151918) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "meeting_requests", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.integer  "phone_number"
-    t.integer  "accountant_id"
-    t.datetime "appointment_time"
-    t.text     "purpose_of_meeting"
-    t.boolean  "skype_interview",    :default => false
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
-  end
-
   create_table "news_feeds", :force => true do |t|
     t.integer  "category_id"
     t.string   "news_image"
