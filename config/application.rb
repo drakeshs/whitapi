@@ -62,6 +62,7 @@ module WhitsonwattApi
     config.assets.enabled = true
     config.middleware.delete "Rack::ETag"
     config.middleware.delete "Rack::Lock"
+    config.assets.initialize_on_precompile = false
     # config.middleware.delete "ActionDispatch::Flash"
     # config.middleware.delete "ActionDispatch::BestStandardsSupport"
     # Version of your assets, change this if you want to expire all your assets

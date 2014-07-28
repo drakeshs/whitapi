@@ -49,4 +49,4 @@ gem 'rmagick'
 # gem 'debugger'
 gem "devise"
 
-gem 'sequel', '~> 4.12.0'
+# gem 'sequel', '~> 4.12.0'
