@@ -51,9 +51,9 @@ ActiveRecord::Schema.define(:version => 20140715151918) do
     t.integer  "accountant_id"
     t.datetime "appointment_time"
     t.text     "purpose_of_meeting"
-    t.boolean  "skype_interview"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.boolean  "skype_interview",    :default => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
   create_table "news_feeds", :force => true do |t|

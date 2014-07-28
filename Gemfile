@@ -49,4 +49,4 @@ gem 'rmagick'
 # gem 'debugger'
 gem "devise"
 
-#heroku ps:scale web=1
+gem 'sequel', '~> 4.12.0'

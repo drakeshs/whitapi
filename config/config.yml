@@ -1,0 +1,17 @@
+development:
+foo:
+bar: "blah blah"
+baz: "blah blah"
+qux: "blah blah"
+ 
+production:
+foo:
+bar: "blah blah"
+baz: "blah blah"
+qux: "blah blah"
+ 
+test:
+foo:
+bar: "blah blah"
+baz: "blah blah"
+qux: "blah blah"

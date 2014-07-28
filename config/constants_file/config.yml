@@ -1,0 +1,17 @@
+development:
+Sequel.connect:
+bar: "blah blah"
+baz: "blah blah"
+qux: "blah blah"
+
+production:
+Sequel.connect:
+bar: "blah blah"
+baz: "blah blah"
+qux: "blah blah"
+
+test:
+Sequel.connect:
+bar: "blah blah"
+baz: "blah blah"
+qux: "blah blah"

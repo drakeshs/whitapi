@@ -1,0 +1,20 @@
+# development:
+	# DB_SEQUEL = Sequel.connect(:adapter => 'mysql2', :user => 'root', :password => "", :host => "127.0.0.1", :database => "whitsonwatt_api_development")
+# test:
+# 	DB_SEQUEL = Sequel.connect(adapter: 'postgres',user: 'root',password: '',database: 'whitsonwatt_api_test')
+# production:
+# 	DB_SEQUEL = Sequel.connect(adapter: 'postgres',user: 'root',password: '',database: 'whitsonwatt_api_production')
+
+
+
+# {"development"=>{"adapter"=>"mysql2", "database"=>"whitsonwatt_api_development"}}
+# development:
+# p "hello world"
+  # adapter: mysql2
+  # encoding: utf8
+  # reconnect: false
+  # database: whitsonwatt_api_development
+  # pool: 5
+  # user: root
+  # password:
+  # socket: /var/run/mysqld/mysqld.sock
