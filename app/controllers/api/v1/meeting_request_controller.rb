@@ -10,7 +10,6 @@ module Api
 
 			def send_meeting_request
 	  		ids = params[:meeting_details]["accountant_id"]
-        p params[:meeting_details]
   			@meeting_request = MeetingRequest.new(params[:meeting_details])
   			@meeting_request.accountant_id = Accountant.where(name: "#{ids}").first.id
 	      if @meeting_request.save! 

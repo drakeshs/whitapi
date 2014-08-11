@@ -26,6 +26,7 @@ group :production do
      gem 'rails_12factor'
 end
 
+gem 'rabl'
 gem 'oj'
 gem 'oj_mimic_json'
 

@@ -2,7 +2,7 @@ class MeetingRequest < ActiveRecord::Base
   attr_accessible :appointment_time, :email, :name, :phone_number, :purpose_of_meeting,:accountant_id,:accountant, :skype_interview
 	belongs_to :accountant
   after_create :send_meeting_request_email
-  validates :phone_number, numericality: {only_integer: true}, length: {is: 10}
+  # validates :phone_number, numericality: {only_integer: true}, length: {is: 10}
 
   private
   def send_meeting_request_email
