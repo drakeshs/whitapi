@@ -11,7 +11,7 @@ class MeetingRequest < ActiveRecord::Base
       UserMailer.meeting_request_to(self).deliver
     # end
   end
-  def self.feature_request(details)
-    UserMailer.send_feature_request_mail(details).deliver
-  end
+  # def self.feature_request(details)
+  #   UserMailer.send_feature_request_mail(details).deliver
+  # end
 end

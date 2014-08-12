@@ -60,10 +60,11 @@ ActiveRecord::Schema.define(:version => 20140715151918) do
     t.integer  "category_id"
     t.string   "news_image"
     t.string   "news_title"
+    t.string   "category_name"
     t.text     "description"
     t.date     "news_date"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|

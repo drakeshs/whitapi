@@ -4,7 +4,7 @@ module Api
 		class NewsFeedsController < Api::ApiController
 			def index
 				@todays_news_feeds = NewsFeed.most_recent(params[:category])
-				@last_month_news_feeds = NewsFeed.last_month(params[:category])
+  			@last_month_news_feeds = NewsFeed.last_month(params[:category])
 				@this_months_news_feeds = NewsFeed.this_month(params[:category])
 			  render :json => MultiJson.dump(:status => "sucess",:todays_news_feeds => @todays_news_feeds,:this_months_news_feeds => @this_months_news_feeds,:last_month_news_feeds => @last_month_news_feeds)
 			end
