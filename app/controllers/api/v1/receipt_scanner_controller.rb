@@ -45,10 +45,14 @@ module Api
 				# 		format.json { render :json => @postcard.errors, :status => :unprocessable_entity }
 				# 	end
 				# end
-				# u = ReceiptScanner.new
-				# u.receipt_scanner_photo = params[:name_of_file_param]
-				# u.save!
-			  render :json => MultiJson.dump(:status => "sucess")
+				receipt_scanner = ReceiptScanner.new
+				receipt_scanner.email = params[:email]
+				receipt_scanner.notes = params[:notes]
+				receipt_scanner.business_percentage = params[:business_percentage]
+				receipt_scanner.date = params[:date]
+				receipt_scanner.receipt_scanner_photo = params[:name_of_file_param]
+				receipt_scanner.save!
+			  render :json => MultiJson.dump(:status => "created receipt scanner successfully")
 			end
 			def show
   			# @news_feeds = NewsFeed.find(params[:id])
