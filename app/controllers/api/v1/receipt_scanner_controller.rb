@@ -10,10 +10,7 @@ module Api
 				p "*************************"
 				p "*************************"
 				p "*************************"
-				p params[:email]
-				p params[:notes]
-				p params[:business_percentage]
-				p params[:receipt_scanner_photo]
+				p params
 				p "*************************"
 				p "*************************"
 				p "*************************"
@@ -48,14 +45,10 @@ module Api
 				# 		format.json { render :json => @postcard.errors, :status => :unprocessable_entity }
 				# 	end
 				# end
-				receipt_scanner = ReceiptScanner.new
-				receipt_scanner.email = params[:email]
-				receipt_scanner.notes = params[:notes]
-				receipt_scanner.business_percentage = params[:business_percentage]
-				receipt_scanner.date = params[:date]
-				receipt_scanner.receipt_scanner_photo = params[:receipt_scanner_photo]
-				receipt_scanner.save!
-			  render :json => MultiJson.dump(:status => "created receipt scanner successfully")
+				u = ReceiptScanner.new
+				u.receipt_scanner_photo = params[:name_of_file_param]
+				u.save!
+			  render :json => MultiJson.dump(:status => "sucess")
 			end
 			def show
   			# @news_feeds = NewsFeed.find(params[:id])
