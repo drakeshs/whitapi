@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+require 'mime/types'
 class ReceiptScannerUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -49,7 +49,13 @@ class ReceiptScannerUploader < CarrierWave::Uploader::Base
   # end
   process :set_content_type
 
+  # def set_content_type(*args)
+  #   self.file.instance_variable_set(:@content_type, "image/jpeg")
+  # end
   def set_content_type(*args)
-    self.file.instance_variable_set(:@content_type, "image/jpeg")
+    content_type = file.content_type == 'application/octet-stream' || file.content_type.blank? ? MIME::Types.type_for(original_filename).first.to_s : file.content_type
+    self.file.instance_variable_set(:@content_type, content_type)
   end
 end
+end
+

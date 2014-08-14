@@ -25,6 +25,7 @@ module Api
 				# u.avatar = params[:file]
 				# u.avatar = File.open('somewhere')
 				# u.save!
+
 				# tempfile = Tempfile.new("photoupload")
 				# tempfile.binmode
 				# tempfile << request.body.read
@@ -45,10 +46,28 @@ module Api
 				# 		format.json { render :json => @postcard.errors, :status => :unprocessable_entity }
 				# 	end
 				# end
-				u = ReceiptScanner.new
-				u.receipt_scanner_photo = params[:receipt_scanner_photo]
-				u.save!
-			  render :json => MultiJson.dump(:status => "sucess")
+				# u = ReceiptScanner.new
+				# u.receipt_scanner_photo = params[:receipt_scanner_photo]
+				# u.save!
+				# render :json => MultiJson.dump(:status => "sucess")
+			  tempfile = Tempfile.new("photoupload")
+			  tempfile.binmode
+			  tempfile << request.body.read
+			  tempfile.rewind
+
+			  photo_params = params[:receipt_scanner_photo].slice(:filename, :type, :head).merge(:tempfile => tempfile)
+			  photo = ActionDispatch::Http::UploadedFile.new(photo_params)
+
+			  @postcard = ReceiptScanner.new
+			  @postcard.photo = photo
+
+			  respond_to do |format|
+			    if @postcard.save
+			      format.json { head :ok }
+			    else
+			      format.json { render :json => @postcard.errors, :status => :unprocessable_entity }
+			    end
+			  end
 			end
 			def show
   			# @news_feeds = NewsFeed.find(params[:id])
@@ -229,3 +248,23 @@ end
 #   end
 # end
 
+# def photo
+#   tempfile = Tempfile.new("photoupload")
+#   tempfile.binmode
+#   tempfile << request.body.read
+#   tempfile.rewind
+
+#   photo_params = params[:receipt_scanner_photo].slice(:filename, :type, :head).merge(:tempfile => tempfile)
+#   photo = ActionDispatch::Http::UploadedFile.new(photo_params)
+
+#   @postcard = ReceiptScanner.new
+#   @postcard.photo = photo
+
+#   respond_to do |format|
+#     if @postcard.save
+#       format.json { head :ok }
+#     else
+#       format.json { render :json => @postcard.errors, :status => :unprocessable_entity }
+#     end
+#   end
+# end
