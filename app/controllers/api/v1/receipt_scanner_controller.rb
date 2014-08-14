@@ -10,7 +10,10 @@ module Api
 				p "*************************"
 				p "*************************"
 				p "*************************"
-				p params
+				p params[:email]
+				p params[:notes]
+				p params[:business_percentage]
+				p params[:name_of_file_param]
 				p "*************************"
 				p "*************************"
 				p "*************************"
