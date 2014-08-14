@@ -47,5 +47,9 @@ class ReceiptScannerUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  process :set_content_type
 
+  def set_content_type(*args)
+    self.file.instance_variable_set(:@content_type, "image/jpeg")
+  end
 end
