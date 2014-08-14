@@ -1,9 +1,9 @@
 # encoding: utf-8
 
-class NewsImageUploader < CarrierWave::Uploader::Base
+class ReceiptScannerUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
+  # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -47,6 +47,5 @@ class NewsImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-end
 
-# rails g uploader receipt_scanner
+end

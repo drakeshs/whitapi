@@ -7,6 +7,7 @@ WhitsonwattApi::Application.routes.draw do
       resources :news_feeds, :only => [:index,:show] 
       resources :key_dates, :only => [:index,:show] 
       # post "meeting_request/send_email"
+      post "receipt_scanner/create_receipt"
       get "categories/index"
       get "meeting_request/accountants"
       post "meeting_request/feature_request"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140715151918) do
+ActiveRecord::Schema.define(:version => 20140813131849) do
 
   create_table "accountants", :force => true do |t|
     t.string   "name"
@@ -79,6 +79,16 @@ ActiveRecord::Schema.define(:version => 20140715151918) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "receipt_scanners", :force => true do |t|
+    t.string   "email"
+    t.text     "notes"
+    t.string   "business_percentage"
+    t.date     "date"
+    t.string   "receipt_scanner_photo"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

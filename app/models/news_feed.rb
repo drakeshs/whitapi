@@ -2,7 +2,7 @@ class NewsFeed < ActiveRecord::Base
   attr_accessible :category_id,:category_name, :news_image, :description,:news_date, :news_title,:news_image_cache
   belongs_to :category
 	mount_uploader :news_image, NewsImageUploader
-	before_save { |news_feed| news_feed.category_name = news_feed.category.title }
+	# before_save { |news_feed| news_feed.category_name = news_feed.category.title }
 	def self.most_recent(category)
 		if category.blank? || category.split(',').include?("0")
 			where("news_date = :start_date",{:start_date => Date.today})
@@ -27,3 +27,5 @@ class NewsFeed < ActiveRecord::Base
 		end
 	end
 end 
+
+# mount_uploader :photo, PhotoUploader

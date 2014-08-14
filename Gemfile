@@ -6,8 +6,11 @@ gem 'rails', '3.2.15'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', group: :development
-
+# gem 'mysql2', group: :development
+group :development do
+	gem 'rest-client', '~> 1.7.2'
+	gem 'mysql2'
+end
 gem 'rails_admin'
 # Gems used only for assets and not required
 # in production environments by default.
