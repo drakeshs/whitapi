@@ -46,7 +46,7 @@ module Api
 				# 	end
 				# end
 				u = ReceiptScanner.new
-				u.receipt_scanner_photo = params[:name_of_file_param]
+				u.receipt_scanner_photo = params[:receipt_scanner_photo]
 				u.save!
 			  render :json => MultiJson.dump(:status => "sucess")
 			end
