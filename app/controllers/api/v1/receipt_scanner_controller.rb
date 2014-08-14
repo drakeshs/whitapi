@@ -13,7 +13,7 @@ module Api
 				p params[:email]
 				p params[:notes]
 				p params[:business_percentage]
-				p params[:name_of_file_param]
+				p params[:receipt_scanner_photo]
 				p "*************************"
 				p "*************************"
 				p "*************************"
@@ -53,7 +53,7 @@ module Api
 				receipt_scanner.notes = params[:notes]
 				receipt_scanner.business_percentage = params[:business_percentage]
 				receipt_scanner.date = params[:date]
-				receipt_scanner.receipt_scanner_photo = params[:name_of_file_param]
+				receipt_scanner.receipt_scanner_photo = params[:receipt_scanner_photo]
 				receipt_scanner.save!
 			  render :json => MultiJson.dump(:status => "created receipt scanner successfully")
 			end
